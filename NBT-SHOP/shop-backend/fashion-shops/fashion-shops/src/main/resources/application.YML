@@ -1,0 +1,33 @@
+server:
+  port: 8088
+spring:
+  datasource: #Chỉ định cấu hình cho nguồn dữ liệu, thường là cơ sở dữ liệu.
+    url: jdbc:mysql://localhost:3307/shop?useSSL=false&serverTimezone=UTC # URL kết nối JDBC để kết nối với cơ sở dữ liệu MySQL,useSSL=false: Vô hiệu hóa việc sử dụng SSL cho kết nối cơ sở dữ liệu. serverTimezone=UTC: Đặt múi giờ của máy chủ thành UTC.
+    driver-class-name: com.mysql.cj.jdbc.Driver   #Phần này chỉ định kết nối tới cơ sở dữ liệu MySQL đang chạy trên localhost
+    username: root
+    password:
+
+jpa:
+  show-sql: true #Thuộc tính cấu hình này được sử dụng để cho phép hiển thị các câu lệnh SQL
+  hibernate:
+    ddl-auto: none #Thuộc tính này định cấu hình việc tạo DDL (Ngôn ngữ định nghĩa dữ liệu) tự động của Hibernate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        format-sql: true
+
+  servlet:
+    multipart:
+     max-file-size: 10MB
+     max-request-size: 10MB
+
+
+api:
+  prefix: api/v1
+
+jwt:
+  secretKey: Z3H2ehx2Aes52wCgLUyfJI/5BWJdcoRLnM17sdfSjbI=
+  expiration: 2592000
+      #30 ngay = 30 ngay * 24 h * 60 phut * 60s
+
+

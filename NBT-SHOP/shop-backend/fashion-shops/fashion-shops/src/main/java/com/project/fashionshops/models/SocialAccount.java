@@ -1,0 +1,37 @@
+package com.project.fashionshops.models;
+
+import jakarta.persistence.*;
+import lombok.*;
+
+@Entity
+@Table(name = "social_accounts")
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class SocialAccount {
+    // 1 user co nhieu social_accounts
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+
+    @Column(name = "provider", length = 20, nullable = false)
+    private String provider;
+
+    @Column(name = "provider_id", length = 50, nullable = false)
+    private String providerId;
+
+    @Column(name = "email", length = 150)
+    private String email;
+
+    @Column(name = "name", length = 150)
+    private String name;
+
+
+
+
+}
+
